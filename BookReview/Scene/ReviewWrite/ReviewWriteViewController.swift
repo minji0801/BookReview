@@ -5,8 +5,9 @@
 //  Created by 김민지 on 2022/01/27.
 //
 
-import UIKit
+import Kingfisher
 import SnapKit
+import UIKit
 
 final class ReviewWriteViewController: UIViewController {
     
@@ -59,7 +60,7 @@ extension ReviewWriteViewController: UITextViewDelegate {
 }
 
 extension ReviewWriteViewController: ReviewWriteProtocol {
-    // Navigation Bar
+    /// Navigation Bar 구성
     func setupNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .close,
@@ -74,7 +75,7 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         )
     }
     
-    // Cancel Alert
+    /// X 버튼 클릭 시
     func showCloseAlertController() {
         let alertController = UIAlertController(title: "작성중인 내용이 있습니다. 정말 닫으시겠습니까?", message: nil, preferredStyle: .alert)
         
@@ -91,10 +92,12 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         present(alertController, animated: true)
     }
     
+    /// Save 버튼 클릭 시
     func close() {
         dismiss(animated: true)
     }
     
+    /// UIComponents 구성
     func setupViews() {
         view.backgroundColor = .systemBackground
         
@@ -121,9 +124,17 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         }
     }
     
+    /// 책 검색 화면으로 이동
     func presentToSearchBookViewController() {
-        let vc = UINavigationController(rootViewController: SearchBookViewController())
+        let vc = UINavigationController(rootViewController: SearchBookViewController(seachBookDelegate: presenter))
         present(vc, animated: true)
+    }
+    
+    /// 검색한 책의 정보 보여주기
+    func updateViews(title: String, imageURL: URL?) {
+        bookTitleButton.setTitle(title, for: .normal)
+        bookTitleButton.setTitleColor(.label, for: .normal)
+        imageView.kf.setImage(with: imageURL)
     }
 }
 

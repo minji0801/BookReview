@@ -35,7 +35,7 @@ final class ReviewListViewController: UIViewController {    // final : 상속 �
 
 // MARK: Presenter Protocol과 연결
 extension ReviewListViewController: ReviewListProtocol {
-    // Navigation Bar
+    /// Navigation Bar 구성
     func setupNavigationBar() {
         navigationItem.title = "도서 리뷰"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -48,7 +48,7 @@ extension ReviewListViewController: ReviewListProtocol {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
-    // TableView
+    /// TableView 구성
     func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
@@ -56,12 +56,14 @@ extension ReviewListViewController: ReviewListProtocol {
         }
     }
     
+    /// 리뷰 작성 화면으로 이동
     func presentToReviewWriteViewController() {
         let vc = UINavigationController(rootViewController: ReviewWriteViewController())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
+    /// 작성한 리뷰목록 새로고침
     func reloadTableView() {
         tableView.reloadData()
         print("최신의 도서리뷰 목록 보여주기")

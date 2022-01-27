@@ -10,7 +10,9 @@ import SnapKit
 
 final class SearchBookViewController: UIViewController {
     
-    private lazy var presenter = SearchBookPresenter(viewController: self)
+    private lazy var presenter = SearchBookPresenter(viewController: self, delegate: seachBookDelegate)
+    
+    private let seachBookDelegate: SearchBookDelegate
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -20,6 +22,17 @@ final class SearchBookViewController: UIViewController {
         return tableView
     }()
     
+    // SearchBookDelegate Init
+    init(seachBookDelegate: SearchBookDelegate) {
+        self.seachBookDelegate = seachBookDelegate
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +41,7 @@ final class SearchBookViewController: UIViewController {
 }
 
 extension SearchBookViewController: SearchBookProtocol {
-    // SearchBar
+    /// SearchBar 구성
     func setupViews() {
         view.backgroundColor = .systemBackground
         
@@ -44,7 +57,16 @@ extension SearchBookViewController: SearchBookProtocol {
         }
     }
     
+    /// 검색 화면 닫기
     func dismiss() {
+        // 두 번 클릭해야 닫히는 버그 발생
+        // NavigationItem에서 SearchController를 dismiss하고 다시 dismiss하면 됨.
+        navigationItem.searchController?.dismiss(animated: true)
         dismiss(animated: true)
+    }
+    
+    /// TableView에 검색 내용 띄우기
+    func reloadView() {
+        tableView.reloadData()
     }
 }

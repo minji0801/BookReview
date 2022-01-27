@@ -21,6 +21,7 @@ final class ReviewListPresenter: NSObject {
         self.viewController = viewController
     }
     
+    /// 리뷰 작성 화면 구성
     func viewDidLoad() {    // ViewController에게 명령
         viewController.setupNavigationBar()
         viewController.setupViews()
@@ -31,6 +32,7 @@ final class ReviewListPresenter: NSObject {
         viewController.reloadTableView()
     }
     
+    /// + 버튼 클릭
     func didTapRightBarButtonItem() {
         viewController.presentToReviewWriteViewController()
     }

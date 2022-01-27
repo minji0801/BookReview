@@ -23,6 +23,10 @@
 		A54A8AAE27A24E7F00A70645 /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8AAD27A24E7F00A70645 /* ReviewWriteViewController.swift */; };
 		A54A8AB127A25F3500A70645 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8AB027A25F3500A70645 /* SearchBookViewController.swift */; };
 		A54A8AB327A25F3E00A70645 /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8AB227A25F3E00A70645 /* SearchBookPresenter.swift */; };
+		A54A8AB627A26C3B00A70645 /* BookSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8AB527A26C3B00A70645 /* BookSearchRequestModel.swift */; };
+		A54A8AB927A26CAA00A70645 /* BookSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8AB827A26CAA00A70645 /* BookSearchResponseModel.swift */; };
+		A54A8ABB27A26E7300A70645 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8ABA27A26E7300A70645 /* Book.swift */; };
+		A54A8ABD27A26ECD00A70645 /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8ABC27A26ECD00A70645 /* BookSearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		A54A8AAD27A24E7F00A70645 /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		A54A8AB027A25F3500A70645 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		A54A8AB227A25F3E00A70645 /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
+		A54A8AB527A26C3B00A70645 /* BookSearchRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRequestModel.swift; sourceTree = "<group>"; };
+		A54A8AB827A26CAA00A70645 /* BookSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResponseModel.swift; sourceTree = "<group>"; };
+		A54A8ABA27A26E7300A70645 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A54A8ABC27A26ECD00A70645 /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,8 @@
 			children = (
 				A54A8A6E27A22AD200A70645 /* AppDelegate.swift */,
 				A54A8A7027A22AD200A70645 /* SceneDelegate.swift */,
+				A54A8ABE27A26ED100A70645 /* Manager */,
+				A54A8AB727A26C3F00A70645 /* Models */,
 				A54A8AAA27A22FDE00A70645 /* Scene */,
 				A54A8A7727A22AD200A70645 /* Assets.xcassets */,
 				A54A8A7927A22AD200A70645 /* LaunchScreen.storyboard */,
@@ -162,8 +172,8 @@
 		A54A8AAF27A24E8500A70645 /* ReviewWrite */ = {
 			isa = PBXGroup;
 			children = (
-				A54A8AAB27A24E7200A70645 /* ReviewWritePresenter.swift */,
 				A54A8AAD27A24E7F00A70645 /* ReviewWriteViewController.swift */,
+				A54A8AAB27A24E7200A70645 /* ReviewWritePresenter.swift */,
 			);
 			path = ReviewWrite;
 			sourceTree = "<group>";
@@ -175,6 +185,24 @@
 				A54A8AB227A25F3E00A70645 /* SearchBookPresenter.swift */,
 			);
 			path = SearchBook;
+			sourceTree = "<group>";
+		};
+		A54A8AB727A26C3F00A70645 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A54A8ABA27A26E7300A70645 /* Book.swift */,
+				A54A8AB527A26C3B00A70645 /* BookSearchRequestModel.swift */,
+				A54A8AB827A26CAA00A70645 /* BookSearchResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A54A8ABE27A26ED100A70645 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A54A8ABC27A26ECD00A70645 /* BookSearchManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,11 +347,15 @@
 			files = (
 				A54A8AAC27A24E7200A70645 /* ReviewWritePresenter.swift in Sources */,
 				A54A8A7327A22AD200A70645 /* ReviewListViewController.swift in Sources */,
+				A54A8AB627A26C3B00A70645 /* BookSearchRequestModel.swift in Sources */,
+				A54A8ABB27A26E7300A70645 /* Book.swift in Sources */,
 				A54A8AAE27A24E7F00A70645 /* ReviewWriteViewController.swift in Sources */,
 				A54A8AB127A25F3500A70645 /* SearchBookViewController.swift in Sources */,
+				A54A8AB927A26CAA00A70645 /* BookSearchResponseModel.swift in Sources */,
 				A54A8A6F27A22AD200A70645 /* AppDelegate.swift in Sources */,
 				A54A8AB327A25F3E00A70645 /* SearchBookPresenter.swift in Sources */,
 				A54A8AA827A22FCD00A70645 /* ReviewListPresenter.swift in Sources */,
+				A54A8ABD27A26ECD00A70645 /* BookSearchManager.swift in Sources */,
 				A54A8A7127A22AD200A70645 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
