@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50618CA27A369CB000285CF /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50618C927A369CB000285CF /* UserDefaultsManager.swift */; };
+		A50618CC27A369E4000285CF /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50618CB27A369E4000285CF /* BookReview.swift */; };
+		A50618CE27A37986000285CF /* MockReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50618CD27A37986000285CF /* MockReviewListViewController.swift */; };
+		A50618D027A379C7000285CF /* MockUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50618CF27A379C7000285CF /* MockUserDefaultsManager.swift */; };
 		A54A8A6F27A22AD200A70645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A6E27A22AD200A70645 /* AppDelegate.swift */; };
 		A54A8A7127A22AD200A70645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A7027A22AD200A70645 /* SceneDelegate.swift */; };
 		A54A8A7327A22AD200A70645 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A7227A22AD200A70645 /* ReviewListViewController.swift */; };
 		A54A8A7827A22AD200A70645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54A8A7727A22AD200A70645 /* Assets.xcassets */; };
 		A54A8A7B27A22AD200A70645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54A8A7927A22AD200A70645 /* LaunchScreen.storyboard */; };
-		A54A8A8627A22AD200A70645 /* BookReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A8527A22AD200A70645 /* BookReviewTests.swift */; };
+		A54A8A8627A22AD200A70645 /* ReviewListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A8527A22AD200A70645 /* ReviewListPresenterTests.swift */; };
 		A54A8A9027A22AD200A70645 /* BookReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A8F27A22AD200A70645 /* BookReviewUITests.swift */; };
 		A54A8A9227A22AD200A70645 /* BookReviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54A8A9127A22AD200A70645 /* BookReviewUITestsLaunchTests.swift */; };
 		A54A8AA027A22C9500A70645 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A54A8A9F27A22C9500A70645 /* SnapKit */; };
@@ -47,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50618C927A369CB000285CF /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A50618CB27A369E4000285CF /* BookReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReview.swift; sourceTree = "<group>"; };
+		A50618CD27A37986000285CF /* MockReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListViewController.swift; sourceTree = "<group>"; };
+		A50618CF27A379C7000285CF /* MockUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManager.swift; sourceTree = "<group>"; };
 		A54A8A6B27A22AD200A70645 /* BookReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54A8A6E27A22AD200A70645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54A8A7027A22AD200A70645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +63,7 @@
 		A54A8A7A27A22AD200A70645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A54A8A7C27A22AD200A70645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A54A8A8127A22AD200A70645 /* BookReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A54A8A8527A22AD200A70645 /* BookReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewTests.swift; sourceTree = "<group>"; };
+		A54A8A8527A22AD200A70645 /* ReviewListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenterTests.swift; sourceTree = "<group>"; };
 		A54A8A8B27A22AD200A70645 /* BookReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54A8A8F27A22AD200A70645 /* BookReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITests.swift; sourceTree = "<group>"; };
 		A54A8A9127A22AD200A70645 /* BookReviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -98,6 +106,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50618D127A37A04000285CF /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A50618CD27A37986000285CF /* MockReviewListViewController.swift */,
+				A50618CF27A379C7000285CF /* MockUserDefaultsManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		A50618D227A37A18000285CF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A54A8A8527A22AD200A70645 /* ReviewListPresenterTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		A54A8A6227A22AD200A70645 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +161,8 @@
 		A54A8A8427A22AD200A70645 /* BookReviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				A54A8A8527A22AD200A70645 /* BookReviewTests.swift */,
+				A50618D227A37A18000285CF /* Tests */,
+				A50618D127A37A04000285CF /* Mock */,
 			);
 			path = BookReviewTests;
 			sourceTree = "<group>";
@@ -193,6 +219,7 @@
 				A54A8ABA27A26E7300A70645 /* Book.swift */,
 				A54A8AB527A26C3B00A70645 /* BookSearchRequestModel.swift */,
 				A54A8AB827A26CAA00A70645 /* BookSearchResponseModel.swift */,
+				A50618CB27A369E4000285CF /* BookReview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A54A8ABC27A26ECD00A70645 /* BookSearchManager.swift */,
+				A50618C927A369CB000285CF /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -348,6 +376,8 @@
 				A54A8AAC27A24E7200A70645 /* ReviewWritePresenter.swift in Sources */,
 				A54A8A7327A22AD200A70645 /* ReviewListViewController.swift in Sources */,
 				A54A8AB627A26C3B00A70645 /* BookSearchRequestModel.swift in Sources */,
+				A50618CA27A369CB000285CF /* UserDefaultsManager.swift in Sources */,
+				A50618CC27A369E4000285CF /* BookReview.swift in Sources */,
 				A54A8ABB27A26E7300A70645 /* Book.swift in Sources */,
 				A54A8AAE27A24E7F00A70645 /* ReviewWriteViewController.swift in Sources */,
 				A54A8AB127A25F3500A70645 /* SearchBookViewController.swift in Sources */,
@@ -364,7 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A54A8A8627A22AD200A70645 /* BookReviewTests.swift in Sources */,
+				A50618CE27A37986000285CF /* MockReviewListViewController.swift in Sources */,
+				A54A8A8627A22AD200A70645 /* ReviewListPresenterTests.swift in Sources */,
+				A50618D027A379C7000285CF /* MockUserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

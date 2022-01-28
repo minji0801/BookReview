@@ -18,6 +18,11 @@ protocol ReviewWriteProtocol {
 
 final class ReviewWritePresenter {
     private let viewController: ReviewWriteProtocol
+    private let userDefaultsManager = UserDefaultsManager()
+    
+    private var book: Book?
+    
+    let contentsTextViewPlaceHolderText = "내용을 입력해주세요."
     
     init(viewController: ReviewWriteProtocol) {
         self.viewController = viewController
@@ -35,8 +40,19 @@ final class ReviewWritePresenter {
     }
     
     /// Save 버튼 클릭
-    func didTapRightBarButton() {
+    func didTapRightBarButton(contentsText: String?) {
         // TODO: UserDefaults에 유저가 작성한 도서리뷰 저장하기
+        
+        guard let book = book,
+              let contentsText = contentsText,
+              contentsText != contentsTextViewPlaceHolderText else { return }
+
+        let bookReview = BookReview(
+            title: book.title,
+            contents: contentsText,
+            imageURL: book.imageURL
+        )
+        userDefaultsManager.setReview(bookReview)
         viewController.close()
     }
     
@@ -49,6 +65,8 @@ final class ReviewWritePresenter {
 // MARK: 선택된 책의 정보를 ViewController에 띄우기
 extension ReviewWritePresenter: SearchBookDelegate {
     func selectBook(_ book: Book) {
+        self.book = book
+        
         viewController.updateViews(title: book.title, imageURL: book.imageURL)
     }
 }

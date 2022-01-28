@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ReviewListProtocol {
     func setupNavigationBar()   // ViewController에서 정의한 setupNavigationBar()
@@ -16,9 +17,13 @@ protocol ReviewListProtocol {
 
 final class ReviewListPresenter: NSObject {
     private let viewController: ReviewListProtocol
+    private let userDefaultsManager: UserDefaultsManagerProtocol
     
-    init(viewController: ReviewListProtocol) {
+    private var review: [BookReview] = []
+    
+    init(viewController: ReviewListProtocol, userDefaultsManager: UserDefaultsManagerProtocol = UserDefaultsManager()) {
         self.viewController = viewController
+        self.userDefaultsManager = userDefaultsManager
     }
     
     /// 리뷰 작성 화면 구성
@@ -29,6 +34,7 @@ final class ReviewListPresenter: NSObject {
     
     func viewWillAppear() {
         // TODO: UserDefaults 내용 업데이트하기
+        review = userDefaultsManager.getReviews()
         viewController.reloadTableView()
     }
     
@@ -42,12 +48,19 @@ final class ReviewListPresenter: NSObject {
 // MARK: 데이터와 관련된 모든 것은 Presenter에서 다루기
 extension ReviewListPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return review.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = "\(indexPath)"
+        let review = review[indexPath.row]
+        cell.textLabel?.text = review.title
+        cell.detailTextLabel?.text = review.contents
+        cell.imageView?.kf.setImage(with: review.imageURL, placeholder: .none, completionHandler: { _ in
+            cell.setNeedsLayout()   // 한 번더 레이아웃 업데이트하기
+        })
+        
+        cell.selectionStyle = .none
         
         return cell
     }
